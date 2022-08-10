@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Database = () => {
-    const pokemons = [
+[
         {name: "pikachu",
         id:25,
         type:"electric",
