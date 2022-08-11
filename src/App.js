@@ -1,12 +1,12 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import Index from "./Components/Home/Index.jsx";
+import Home from "./Components/Home/Home.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Index />
+      <Home />
     </div>
   );
 }
