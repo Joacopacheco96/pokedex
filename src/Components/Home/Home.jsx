@@ -11,11 +11,23 @@ const [input, setInput] = useState('')
 const handleInput = (e) => {
   setInput(e.target.value);}
 
-const [order, setorder] = useState(true)
+const sortByName = (e) =>{
+  Database.sort(function (a, b) {
+    if (a.name > b.name) {
+      return 1;
+    }    
+    else return -1;
+})}
 
-const sortByName = () =>{
-  Database.name.sort()
-}
+  const sortById = () => {
+    Database.sort(function (a, b) {
+      if (a.id > b.id) {
+        return 1;
+      }
+      else
+        return -1;
+    });
+  }
 
   return (
 
@@ -25,11 +37,10 @@ const sortByName = () =>{
         <img className="pokeballIcon" src={"./images/Pokeball.png"} alt="icon" />
         <span className="title">Pokédex</span>
         </div>
-        <button className="sortButton">Sort</button>
+        <button onClick={sortByName()} className="sortButton">Sort</button>
       </div>
       <input className="input" type="text" onChange={handleInput} placeholder="🔎 Buscar"></input>
-
-      
+              
       <ul className='list'>
             {Database.map((item, index) => {
                 if (item.name.includes(`${input}`)) {
@@ -48,10 +59,10 @@ const sortByName = () =>{
           
           </div>
       </div>
-                )
+                )                
               }
+              
             })}
-            sortByName;
         </ul>
     </main>
   );

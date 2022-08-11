@@ -36,7 +36,7 @@ const Database = [
     spd: 43,
   },
   {
-    name: "Butterfree",
+    name: "butterfree",
     id: 12,
     type: "bug",
     color: "light-green",
