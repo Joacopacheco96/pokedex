@@ -1,41 +1,40 @@
 import React from "react";
 
-import "../../Stylessheets/styles.css";
+import Database from '../../Database/Database.jsx'
 
 const Index = () => {
+      
   return (
+
     <main>
-      <div>
-        <img className="pokeballIcon" src={"./images/Pokeball.png"} />
+      <div className="NavContainer">
+        <img className="pokeballIcon" src={"./images/Pokeball.png"} alt="icon" />
         <span className="title">Pokédex</span>
         <button className="sortButton" />
-        <input className="input" type="text" placeholder="🔎 Buscar"></input>
       </div>
-      <div class="card shadow-sm">
-        <svg
-          class="bd-placeholder-img card-img-top"
-          width="100%"
-          height="225"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: Thumbnail"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#55595c"></rect>
-          <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-            Thumbnail
-          </text>
-        </svg>
+        <input className="input" type="text" placeholder="🔎 Buscar"></input>
 
-        <div class="card-body">
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
+      <ul className='list'>
+            {Database.map((item, index) => {
+                return (
+      <div key={index}>
+
+        <p>{item.id}</p>                  
+
+        <div class="cardContainer shadow-sm">
+          <img src={`./images/${item.name}.png`} alt='Imagen Pokemon'/>
+
+          <div class="card-body">
+            <p class="card-text">
+              {item.name}
+            </p>
+
+          </div>
         </div>
       </div>
+                )
+            })}
+        </ul>
     </main>
   );
 };
