@@ -5,7 +5,7 @@ import '../Home/Home.css'
 const Card = ({item, index}) => {
   return (
     
-      <li className="cardContainer" key={index}>
+      <li className="cardContainer">
         <p className="id">{`# ${item.id}`}</p>
 
         <img

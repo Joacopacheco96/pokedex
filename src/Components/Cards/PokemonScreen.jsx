@@ -1,8 +1,19 @@
 import React from "react";
+import {useParams } from "react-router-dom";
+import Database from "../../Database/Database";
 
-const PokemonScreen = ({ item, index }) => {
+
+const PokemonScreen = () => {
+
+  const params = useParams();
+  const pokemonToRender=params.id;
+  const newItem = Database.filter((pokemon)=>{
+    return pokemonToRender==pokemon.id    
+  })
+  const item=newItem[0];
+  
   return (
-    <div key={index}>
+    <div>
       <h2 className="pokemonName">{item.name}</h2>
       <div
         className="imageContainer"
@@ -11,7 +22,7 @@ const PokemonScreen = ({ item, index }) => {
         <img
           class="pokemonImage"
           src={`./images/${item.name}.png`}
-          alt={item.name}
+          alt="imgPokemon"
         />
       </div>
       <div className="type">{item.type}</div>

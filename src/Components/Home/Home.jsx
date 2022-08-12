@@ -1,41 +1,40 @@
-import React from "react";
-import { useState } from "react";
+import { useState, React } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import DatabaseJson from "../../Database/Database.jsx";
-import Card from '../Cards/Card.jsx'
+import Card from "../Cards/Card.jsx";
 
 import "./Home.css";
 
 const Home = () => {
-
-  const [Database, setDatabase] = useState(DatabaseJson);
+  const [database, setDatabase] = useState(DatabaseJson);
   const [input, setInput] = useState("");
-  const [sortType, setSortType] = useState(true)
-  
+  const [sortType, setSortType] = useState(true);
+  const navigate = useNavigate();
+
   const handleInput = (e) => {
     setInput(e.target.value);
   };
 
-
   function sortByName(e) {
-    const NewDatabase = [...Database].sort(function (a, b) {
+    const NewDatabase = [...database].sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
       } else return -1;
     });
     setDatabase(NewDatabase);
-    setSortType(!sortType)
+    setSortType(!sortType);
   }
 
-  function sortById  (e) {
-  const NewDatabase = [...Database].sort(function (a, b) {
+  function sortById(e) {
+    const NewDatabase = [...database].sort(function (a, b) {
       if (a.id > b.id) {
         return 1;
       } else return -1;
     });
     setDatabase(NewDatabase);
-    setSortType(!sortType)
-  };
+    setSortType(!sortType);
+  }
 
   return (
     <main>
@@ -48,7 +47,9 @@ const Home = () => {
           />
           <span className="title">Pokédex</span>
         </div>
-        <button onClick={sortByName} className="sortButton">
+        <button
+          onClick={sortType ? sortByName : sortById}
+          className="sortButton">
           Sort
         </button>
       </div>
@@ -60,14 +61,17 @@ const Home = () => {
       ></input>
 
       <div className="list">
-        {Database.map((item, index) => {
-        if (item.name.includes(`${input}`)){
-          return(
+        {database.map((item, index) => {
+          if (item.name.includes(`${input}`)) {
+            return (
 
-      <Card item={item} index={index} />
-      
-      )
-    }})}  
+              <Link key={index} to={`/pokemon/${item.id}`}>
+                <Card item={item} index={index} />
+              </Link>
+
+            );
+          }
+        })}
       </div>
     </main>
   );

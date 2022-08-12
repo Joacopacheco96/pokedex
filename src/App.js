@@ -1,12 +1,18 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Home from "./Components/Home/Home.jsx";
+import PokemonScreen from "./Components/Cards/PokemonScreen.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pokemon/:id" element={<PokemonScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
