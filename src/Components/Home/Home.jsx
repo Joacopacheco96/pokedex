@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 import DatabaseJson from "../../Database/Database.jsx";
+import Cards from "../Cards/Cards.jsx";
+import PokemonScreen from "../Cards/PokemonScreen.jsx";
 
 import "./Home.css";
 
@@ -55,19 +57,8 @@ const Home = () => {
       <div className="list">
         {Database.map((item, index) => {
           return (
-            <li className="cardContainer" key={index}>
-              <p className="id">{`# ${item.id}`}</p>
-
-              <img
-                class="cardImg shadow-sm"
-                src={`./images/${item.name}.png`}
-                alt="Imagen Pokemon"
-              />
-
-              <div class="card-body">
-                <p class="card-text">{item.name}</p>
-              </div>
-            </li>
+            (<Cards item={item} index={index} />),
+            (<PokemonScreen item={item} index={index} />)
           );
         })}
       </div>
