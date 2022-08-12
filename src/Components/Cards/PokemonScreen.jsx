@@ -1,6 +1,10 @@
 import React from "react";
+<<<<<<< Updated upstream
 import {useParams } from "react-router-dom";
 import Database from "../../Database/Database";
+=======
+import PokemonScreen from "./PokemonScreen.css";
+>>>>>>> Stashed changes
 
 
 const PokemonScreen = () => {
@@ -23,6 +27,12 @@ const PokemonScreen = () => {
           class="pokemonImage"
           src={`./images/${item.name}.png`}
           alt="imgPokemon"
+        />
+
+        <img
+          class="pokeballImage"
+          src={`./images/Pokeball.png`}
+          alt={item.name}
         />
       </div>
       <div className="type">{item.type}</div>
