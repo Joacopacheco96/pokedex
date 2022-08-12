@@ -1,9 +1,11 @@
 import React from "react";
 
-const Cards = ({ item, index }) => {
+import '../Home/Home.css'
+
+const Card = ({item, index}) => {
   return (
-    <div>
-      <li className="cardContainer" key={index}>
+    
+      <li className="cardContainer">
         <p className="id">{`# ${item.id}`}</p>
 
         <img
@@ -16,8 +18,8 @@ const Cards = ({ item, index }) => {
           <p class="card-text">{item.name}</p>
         </div>
       </li>
-    </div>
+    
   );
 };
 
-export default Cards;
+export default Card;

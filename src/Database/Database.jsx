@@ -1,7 +1,7 @@
 const Database = [
   {
     name: "pikachu",
-    id: 25,
+    id:25,
     type: "electric",
     color: "yellow",
     weight: 6,
