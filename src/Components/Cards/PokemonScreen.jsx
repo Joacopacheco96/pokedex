@@ -21,7 +21,7 @@ const PokemonScreen = () => {
       >
         <img
           class="pokemonImage"
-          src={`./images/${item.name}.png`}
+          src={`/images/${item.name}.png`}
           alt="imgPokemon"
         />
       </div>

@@ -1,12 +1,12 @@
 import React from "react";
 
-import '../Home/Home.css'
+import '../Cards/Card.css'
 
-const Card = ({item, index}) => {
+const Card = ({item}) => {
   return (
     
-      <li className="cardContainer">
-        <p className="id">{`# ${item.id}`}</p>
+      <li className={`cardContainer`} style={{ border:`3px solid ${item.color}` }}>
+        <p className="id" style={{ color: `${item.color}` }}>{`# ${item.id}`}</p>
 
         <img
           class="cardImg shadow-sm"
@@ -14,7 +14,7 @@ const Card = ({item, index}) => {
           alt="Imagen Pokemon"
         />
 
-        <div class="card-body">
+        <div class="card-body" style={{ backgroundColor: `${item.color}`}}>
           <p class="card-text">{item.name}</p>
         </div>
       </li>
