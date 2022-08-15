@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Home from "./Components/Home/Home.jsx";
-import PokemonScreen from "./Components/Cards/PokemonScreen.jsx";
+import PokemonScreen from "./Components/PokemonScreen/PokemonScreen.jsx";
 
 function App() {
   return (
