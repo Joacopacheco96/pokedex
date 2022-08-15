@@ -1,65 +1,78 @@
 .rock {
   background-color: #b69e31;
   color: white;
+  border-radius: 10%;
 }
 .ghost {
   background-color: #70559b;
   color: white;
+  border-radius: 10%;
 }
 
 .steel {
   background-color: #b7b9d0;
   color: white;
+  border-radius: 10%;
 }
 
 .water {
   background-color: #6493eb;
   color: white;
+  border-radius: 10%;
 }
 
 .grass {
   background-color: #74cb48;
   color: white;
+  border-radius: 10%;
 }
 
 .psychic {
   background-color: #fb5584;
   color: white;
+  border-radius: 10%;
 }
 
 .ice {
   background-color: #9ad6df;
   color: white;
+  border-radius: 10%;
 }
 
 .dark {
   background-color: #75574c;
   color: white;
+  border-radius: 10%;
 }
 
 .normal {
   background-color: #aaa67f;
   color: white;
+  border-radius: 10%;
 }
 
 .fighting {
   background-color: #c12239;
   color: white;
+  border-radius: 10%;
 }
 
 .poison {
   background-color: #a43e9e;
   color: white;
+  border-radius: 10%;
 }
 
 .ground {
   background-color: #dec16b;
   color: white;
+  border-radius: 10%;
 }
 
 .bug {
   background-color: #a7b723;
   color: white;
+  border-radius: 10%;
 }
 
 .fire {
