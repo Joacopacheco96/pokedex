@@ -1,16 +1,19 @@
-import React from "react";
+import {React, useState} from "react";
 import {useParams } from "react-router-dom";
-import Database from "../../Database/Database";
+import database from "../../Database/Database";
 
 
 const PokemonScreen = () => {
 
   const params = useParams();
   const pokemonToRender=params.id;
-  const newItem = Database.filter((pokemon)=>{
+  const newItem = database.filter((pokemon)=>{
     return pokemonToRender==pokemon.id    
   })
-  const item=newItem[0];
+  const [item, setItem] = useState(newItem[0])
+
+  console.log(database);
+  
   
   return (
     <div>
@@ -32,6 +35,9 @@ const PokemonScreen = () => {
         {item.primaryMove} {item.secondaryMove}
       </div>
       <div className="description">{item.description}</div>
+      <div className="carrousel">
+        <button className="nextPokemon"> Next </button>
+      </div>
       <div>
         <h3>Base Stats</h3>
       </div>
