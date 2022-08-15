@@ -1,9 +1,0 @@
-.pokeballImage {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-}
-
-.ipokeballImage:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}

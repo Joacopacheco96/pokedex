@@ -2,15 +2,15 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  width: 100%;  
+  width: 100%;
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
 }
-.App{
+.App {
   width: 90%;
   position: relative;
   margin: 5%;
