@@ -2,16 +2,19 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  width: 100%;
+  width: 100%; 
+  max-width: 1000px; 
 }
 
-* {
+*{
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
+  
 }
-.App {
+.App{
   width: 90%;
   position: relative;
   margin: 5%;
+  background-color: rgb(241, 241, 241);
 }

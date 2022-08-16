@@ -45,13 +45,14 @@ const Home = () => {
             src={"./images/Pokeball.png"}
             alt="icon"
           />
-          <span className="title">Pokédex</span>
+          <h1 className="title">Pokédex</h1>
         </div>
-        <button
-          onClick={sortType ? sortByName : sortById}
-          className="sortButton">
-          Sort
+        <div className="sortButton">
+        <button onClick={sortType ? sortByName : sortById}>
+          {sortType ? '#':'A'}
         </button>
+        <img src="/images/Arrow.svg"/>
+        </div>
       </div>
       <input
         className="input"
