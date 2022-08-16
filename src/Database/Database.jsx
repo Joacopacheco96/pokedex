@@ -2,7 +2,7 @@ const Database = [
   {
     name: "Pikachu",
     id: 25,
-    type: "Electric",
+    type: "electric",
     color: "#F9CF30",
     weight: 6,
     height: 0.4,
@@ -20,7 +20,7 @@ const Database = [
   {
     name: "Squirtle",
     id: 7,
-    type: "Water",
+    type: "water",
     color: "#6493EB",
     weight: 9,
     height: 0.5,
@@ -38,9 +38,9 @@ const Database = [
   {
     name: "Butterfree",
     id: 12,
-    type: "Bug",
+    type: "bug",
     color: "#A7B723",
-    secondaryType: "Flying",
+    secondaryType: "flying",
     weight: 32,
     height: 1.1,
     primaryMove: "Compound-eyes",
@@ -57,7 +57,7 @@ const Database = [
   {
     name: "Charmander",
     id: 54,
-    type: "Fire",
+    type: "fire",
     color: "#F57D31",
     weight: 8.5,
     height: 0.6,
@@ -75,9 +75,9 @@ const Database = [
   {
     name: "Bulbasaur",
     id: 1,
-    type: "Grass",
+    type: "grass",
     color: "#74CB48",
-    secondaryType: "Poison",
+    secondaryType: "poison",
     weight: 6.9,
     height: 0.7,
     primaryMove: "Chlorophill",
@@ -94,9 +94,9 @@ const Database = [
   {
     name: "Ghastly",
     id: 92,
-    type: "Ghost",
+    type: "ghost",
     color: "#70559B",
-    secondaryType: "Type",
+    secondaryType: "type",
     weight: 0.1,
     height: 1.3,
     primaryMove: "Levitate",
@@ -112,7 +112,7 @@ const Database = [
   {
     name: "Ditto",
     id: 132,
-    type: "Normal",
+    type: "normal",
     color: "#AAA67F",
     weight: 4,
     height: 0.3,
@@ -130,7 +130,7 @@ const Database = [
   {
     name: "Mew",
     id: 152,
-    type: "Psychic",
+    type: "psychic",
     color: "#FB5584",
     weight: 4,
     height: 0.4,
@@ -147,8 +147,8 @@ const Database = [
   {
     name: "Aron",
     id: 304,
-    type: "Steel",
-    secondaryType: "Rock",
+    type: "steel",
+    secondaryType: "rock",
     color: "#B7B9D0",
     weight: 60,
     height: 0.4,

@@ -4,7 +4,6 @@ import "./PokemonScreen.css";
 import "../../Stylessheets/styles.css";
 
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
 import Database from "../../Database/Database";
 
 const PokemonScreen = () => {
@@ -14,11 +13,21 @@ const PokemonScreen = () => {
     return pokemonToRender == pokemon.id;
   });
   const item = Database[newItem];
+  console.log(Database.length);
   return (
     <div className="PokemonScreen" style={{ backgroundColor: `${item.color}` }}>
       <div className="imageContainer">
-        {Database[newItem - 1] && (
+        {Database[newItem - 1] ? (
           <Link to={`/pokemon/${Database[newItem - 1].id}`}>
+            <button
+              className="slideButton"
+              style={{ backgroundColor: `${item.color}`, color: "white" }}
+            >
+              {"<"}
+            </button>
+          </Link>
+        ) : (
+          <Link to={`/pokemon/${Database[Database.length - 1].id}`}>
             <button
               className="slideButton"
               style={{ backgroundColor: `${item.color}`, color: "white" }}
@@ -48,7 +57,7 @@ const PokemonScreen = () => {
           src={`/images/Pokeball.png`}
           alt={item.name}
         />
-        {Database[newItem + 1] && (
+        {Database[newItem + 1] ? (
           <Link to={`/pokemon/${Database[newItem + 1].id}`}>
             <button
               className="slideButton"
@@ -57,12 +66,18 @@ const PokemonScreen = () => {
               {">"}
             </button>
           </Link>
+        ) : (
+          <Link to={`/pokemon/${Database[0].id}`}>
+            <button className="slideButton">{">"}</button>
+          </Link>
         )}
       </div>
       <div className="pokemonInformation">
         <div className="type">
-          <div>{item.type}</div>
-          <div>{item.secondaryType}</div>
+          <div style={{ backgroundColor: `${item.type}` }}>{item.type}</div>
+          <div style={{ backgroundColor: `${item.secondaryType}` }}>
+            {item.secondaryType}
+          </div>
         </div>
 
         <div className="about">
