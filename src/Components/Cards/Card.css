@@ -1,25 +1,29 @@
-<<<<<<< Updated upstream
-.cardContainer{
-    position: relative;
-    width: 29%;
-    margin: 2%; 
-    display: inline-block;
-    border-radius: 5%;}
-.id{width: 90%;
-    text-align: end;}
-.cardImg{
-    width: 100%;}
-.card-body{
-    width: 100%;
-    height: 7vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;}
-.card-text{
-    font-size: larger;
-    color: white;
-    }
-=======
+.cardContainer {
+  position: relative;
+  width: 29%;
+  margin: 2%;
+  display: inline-block;
+  border-radius: 5%;
+}
+.id {
+  width: 90%;
+  text-align: end;
+}
+.cardImg {
+  width: 100%;
+}
+.card-body {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-text {
+  font-size: larger;
+  color: white;
+}
+
 .cardContainer {
   position: relative;
   width: 29%;
@@ -46,4 +50,3 @@
   font-size: larger;
   color: white;
 }
->>>>>>> Stashed changes
