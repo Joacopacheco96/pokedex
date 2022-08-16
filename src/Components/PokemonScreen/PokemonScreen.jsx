@@ -3,26 +3,30 @@ import React from "react";
 import "./PokemonScreen.css";
 import "../../Stylessheets/styles.css";
 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 import Database from "../../Database/Database";
 
 const PokemonScreen = () => {
   const params = useParams();
   const pokemonToRender = params.id;
-  const newItem = Database.filter((pokemon) => {
+  const newItem = Database.findIndex((pokemon) => {
     return pokemonToRender == pokemon.id;
   });
-  const item = newItem[0];
+  const item = Database[newItem];
   return (
     <div className="PokemonScreen" style={{ backgroundColor: `${item.color}` }}>
       <div className="imageContainer">
-        <button
-          className="slideButton"
-          style={{ backgroundColor: `${item.color}`, color: "white" }}
-          // onClick={handleLeftClick}
-        >
-          {"<"}
-        </button>
+        {Database[newItem - 1] && (
+          <Link to={`/pokemon/${Database[newItem - 1].id}`}>
+            <button
+              className="slideButton"
+              style={{ backgroundColor: `${item.color}`, color: "white" }}
+            >
+              {"<"}
+            </button>
+          </Link>
+        )}
 
         <div className="navContainer">
           <h2 src={`/images/arrow-left.svg`} className="pokemonName">
@@ -34,23 +38,26 @@ const PokemonScreen = () => {
         </div>
 
         <img
-          class="pokemonImage"
+          className="pokemonImage"
           src={`/images/${item.name}.png`}
           alt="imgPokemon"
         />
 
         <img
-          class="pokeballImage"
+          className="pokeballImage"
           src={`/images/Pokeball.png`}
           alt={item.name}
         />
-        <button
-          className="slideButton"
-          style={{ backgroundColor: `${item.color}`, color: "white" }}
-          // onClick={handleRigthClick}
-        >
-          {">"}
-        </button>
+        {Database[newItem + 1] && (
+          <Link to={`/pokemon/${Database[newItem + 1].id}`}>
+            <button
+              className="slideButton"
+              style={{ backgroundColor: `${item.color}`, color: "white" }}
+            >
+              {">"}
+            </button>
+          </Link>
+        )}
       </div>
       <div className="pokemonInformation">
         <div className="type">
