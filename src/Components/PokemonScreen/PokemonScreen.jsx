@@ -74,7 +74,7 @@ const PokemonScreen = () => {
       </div>
       <div className="pokemonInformation">
         <div className="type">
-          <div style={{ backgroundColor: `${item.type}` }}>{item.type}</div>
+          <div className={`${item.type}`}>{item.type}</div>
           <div style={{ backgroundColor: `${item.secondaryType}` }}>
             {item.secondaryType}
           </div>
@@ -84,21 +84,38 @@ const PokemonScreen = () => {
           <h3 style={{ color: `${item.color}` }}>About</h3>
         </div>
 
-        <div className="weight">
-          <img class="weigthImage" src={`/images/Weight.svg`} alt="Weight" />
-          {item.weight}
-          <label>Weigth</label>
-        </div>
+        <div className="specifications">
+          <div className="weight">
+            <div className="sub-div">
+              <img
+                className="weightImage"
+                src={`/images/Weight.svg`}
+                alt="Weight"
+              />
+              {item.weight}
+            </div>
+            <label>Weigth</label>
+          </div>
 
-        <div className="height">
-          <img class="heigthImage" src={`/images/Height.svg`} alt="Height" />
-          {item.height}
-          <label>Heigth</label>
-        </div>
+          <div className="height">
+            <div className="sub-div">
+              <img
+                class="heigthImage"
+                src={`/images/Height.svg`}
+                alt="Height"
+              />
+              {item.height}
+            </div>
+            <label>Heigth</label>
+          </div>
 
-        <div className="moves">
-          <label>Moves</label>
-          {item.primaryMove} {item.secondaryMove}
+          <div className="moves">
+            <div className="sub-div">
+              <div>{item.primaryMove}</div>
+              <div>{item.secondaryMove}</div>
+            </div>
+            <label>Moves</label>
+          </div>
         </div>
 
         <div className="description">{item.description}</div>
@@ -106,83 +123,71 @@ const PokemonScreen = () => {
           <h3 style={{ color: `${item.color}` }}>Base Stats</h3>
         </div>
 
-        <span className="Hp">
-          <p>HP</p>
-          <label style={{ color: `${item.color}` }} for="file">
-            {item.hp}
-          </label>
+        <div className="item">
+          <p style={{ color: `${item.color}` }}>HP</p>
+          <label for="file">{item.hp}</label>
           <progress
             style={{ color: `${item.color}` }}
             id="file"
             max="100"
             value={item.hp}
           ></progress>
-        </span>
+        </div>
 
-        <span>
-          <p>ATK</p>
-          <label style={{ color: `${item.color}` }} for="file">
-            {item.atk}
-          </label>
+        <div className="item">
+          <p style={{ color: `${item.color}` }}>ATK</p>
+          <label for="file">{item.atk}</label>
           <progress
             style={{ color: `${item.color}` }}
             id="file"
             max="100"
             value={item.atk}
           ></progress>
-        </span>
+        </div>
 
-        <span>
-          <p>DEF</p>
-          <label style={{ color: `${item.color}` }} for="file">
-            {item.def}
-          </label>
+        <div className="item">
+          <p style={{ color: `${item.color}` }}>DEF</p>
+          <label for="file">{item.def}</label>
           <progress
             style={{ color: `${item.color}` }}
             id="file"
             max="100"
             value={item.def}
           ></progress>
-        </span>
+        </div>
 
-        <span>
-          <p>SATK</p>
-          <label style={{ color: `${item.color}` }} for="file">
-            {item.satk}
-          </label>
+        <div className="item">
+          <p style={{ color: `${item.color}` }}>SATK</p>
+          <label for="file">{item.satk}</label>
           <progress
             style={{ color: `${item.color}` }}
             id="file"
             max="100"
             value={item.satk}
           ></progress>
-        </span>
+        </div>
 
-        <span>
-          <p>SDEF</p>
-          <label style={{ color: `${item.color}` }} for="file">
-            {item.sdef}
-          </label>
+        <div className="item">
+          <p style={{ color: `${item.color}` }}>SDEF</p>
+          <label for="file">{item.sdef}</label>
           <progress
             style={{ color: `${item.color}` }}
             id="file"
             max="100"
             value={item.sdef}
           ></progress>
-        </span>
+        </div>
 
-        <span>
-          <p>SPD</p>
-          <label style={{ color: `${item.color}` }} for="file">
-            {item.spd}
-          </label>
+        <div className="item">
+          <p style={{ color: `${item.color}` }}>SPD</p>
+          <label for="file">{item.spd}</label>
           <progress
             style={{ color: `${item.color}` }}
             id="file"
             max="100"
             value={item.spd}
           ></progress>
-        </span>
+        </div>
       </div>
     </div>
   );
