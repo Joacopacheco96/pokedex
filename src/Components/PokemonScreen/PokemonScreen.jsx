@@ -75,9 +75,7 @@ const PokemonScreen = () => {
       <div className="pokemonInformation">
         <div className="type">
           <div className={`${item.type}`}>{item.type}</div>
-          <div style={{ backgroundColor: `${item.secondaryType}` }}>
-            {item.secondaryType}
-          </div>
+          <div className={`${item.secondaryType}`}>{item.secondaryType}</div>
         </div>
 
         <div className="about">
