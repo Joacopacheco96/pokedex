@@ -16,6 +16,12 @@ const PokemonScreen = () => {
   console.log(Database.length);
   return (
     <div className="PokemonScreen" style={{ backgroundColor: `${item.color}` }}>
+    
+    <Link to='/'>
+      Back to Home
+    </Link>
+
+
       <div className="imageContainer">
         {Database[newItem - 1] ? (
           <Link to={`/pokemon/${Database[newItem - 1].id}`}>
