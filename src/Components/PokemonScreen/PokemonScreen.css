@@ -28,7 +28,6 @@
 
 .imageContainer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
   height: 30vh;
@@ -60,6 +59,47 @@
   border-radius: 5px;
 }
 
+.type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.specifications {
+  display: flex;
+  justify-content: space-around;
+  border: 0px 0px 2px 0px black solid;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.height {
+  border-left: 2px solid rgba(0, 0, 0, 0.136);
+  border-right: 2px solid rgba(0, 0, 0, 0.136);
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.sub-div {
+  padding: 5vh;
+  justify-content: center;
+}
+.weightImage,
+.heigthImage {
+  height: 2vh;
+  width: 2vh;
+}
+
+.type {
+  display: inline-block;
+  justify-content: center;
+
+  border-radius: 10%;
+  margin: 10vh;
+}
 h3 {
   text-align: center;
 }
