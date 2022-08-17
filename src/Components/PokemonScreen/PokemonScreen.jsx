@@ -20,9 +20,9 @@ const PokemonScreen = () => {
     <Link to='/'>
       Back to Home
     </Link>
-    <button onClick={console.log(compareMode)}>compare</button>
+    <button onClick={() => setcompareMode(!compareMode)}>compare</button>
 
-      <>
+      <div className='container'>
       <div className="imageContainer">
         {Database[newItem - 1] ? (
           <Link to={`/pokemon/${Database[newItem - 1].id}`}>
@@ -191,9 +191,9 @@ const PokemonScreen = () => {
           ></progress>
         </span>
       </div>
-      </>
+      </div>
           {compareMode && 
-      <>
+      <div className="container">
           <div className="imageContainer">
           {Database[newItem - 1] ? (
             <Link to={`/pokemon/${Database[newItem - 1].id}`}>
@@ -362,7 +362,7 @@ const PokemonScreen = () => {
             ></progress>
           </span>
         </div>
-        </>} 
+        </div>} 
     </div>
   );
 };
