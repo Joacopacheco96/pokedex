@@ -43,8 +43,7 @@
 .pokemonImage {
   right: 20%;
   top: 15%;
-  height: 30vh;
-  width: 20vw;
+  width: 50%;
   z-index: +1;
 }
 
@@ -138,7 +137,7 @@ li {
 .baseStats {
   display: flex;
   flex-direction: row;
-  padding-bottom: 10px;
+  padding-bottom: 4vh;
 }
 .stats,
 .statsNumber {
@@ -161,7 +160,7 @@ li {
 .txtType {
   margin-left: 1vw;
   margin-right: 1vw;
-  width: 5vw;
+  width: 15vw;
   text-align: center;
 }
 .about {
@@ -190,6 +189,6 @@ label {
 .description {
   display: flex;
   justify-content: center;
-  padding: 5vw;
+  padding: 2vw;
   font-size: larger;
 }
