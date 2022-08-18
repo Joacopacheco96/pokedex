@@ -71,11 +71,6 @@
   border: 0px 0px 2px 0px black solid;
 }
 
-.item {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .height {
   border-left: 2px solid rgba(0, 0, 0, 0.136);
   border-right: 2px solid rgba(0, 0, 0, 0.136);
@@ -96,10 +91,46 @@
 .type {
   display: inline-block;
   justify-content: center;
-
   border-radius: 10%;
   margin: 10vh;
 }
 h3 {
   text-align: center;
+}
+
+/* BASE STATS */
+/* {} */
+
+ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
+}
+
+.baseStats {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+.stats,
+.statsNumber {
+  width: 100px;
+}
+
+.stats {
+  border-right: 2px solid rgba(0, 0, 0, 0.134);
+  padding-right: 25px;
+}
+
+.statsValue {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
 }
