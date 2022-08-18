@@ -96,7 +96,7 @@ const PokemonScreen = () => {
                   src={`/images/Weight.svg`}
                   alt="Weight"
                 />
-                {item.weight}
+                {item.weight}Kg
               </div>
               <label>Weigth</label>
             </div>
@@ -108,7 +108,7 @@ const PokemonScreen = () => {
                   src={`/images/Height.svg`}
                   alt="Height"
                 />
-                {item.height}
+                {item.height}m
               </div>
               <label>Heigth</label>
             </div>
