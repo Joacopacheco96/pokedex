@@ -21,6 +21,12 @@
   border-radius: 10%;
 }
 
+.type{
+  background-color: gray;
+  color: white;
+  border-radius: 10%;
+}
+
 .grass {
   background-color: #74cb48;
   color: white;
