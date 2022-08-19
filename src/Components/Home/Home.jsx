@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { useState, React, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import DatabaseJson from "../../Database/Database.jsx";
@@ -7,7 +7,7 @@ import Card from "../Cards/Card.jsx";
 import "./Home.css";
 
 const Home = () => {
-  const [database, setDatabase] = useState(DatabaseJson);
+  const [database, setDatabase] = useState(0);
   const [input, setInput] = useState("");
   const [sortType, setSortType] = useState(true);
   const navigate = useNavigate();
@@ -36,6 +36,11 @@ const Home = () => {
     setSortType(!sortType);
   }
 
+  useEffect(() => {
+    fetch(`http://localhost:8088/`);
+    setDatabase();
+  });
+
   return (
     <main>
       <div className="navContainer">
@@ -48,10 +53,10 @@ const Home = () => {
           <h1 className="title">Pokédex</h1>
         </div>
         <div className="sortButton">
-        <button onClick={sortType ? sortByName : sortById}>
-          {sortType ? '#':'A'}
-        </button>
-        <img src="/images/Arrow.svg"/>
+          <button onClick={sortType ? sortByName : sortById}>
+            {sortType ? "#" : "A"}
+          </button>
+          <img src="/images/Arrow.svg" />
         </div>
       </div>
       <input
@@ -65,11 +70,9 @@ const Home = () => {
         {database.map((item, index) => {
           if (item.name.includes(`${input}`)) {
             return (
-
               <Link key={index} to={`/pokemon/${item.id}`}>
                 <Card item={item} index={index} />
               </Link>
-
             );
           }
         })}
