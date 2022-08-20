@@ -9,6 +9,16 @@ import Database from "../../Database/Database";
 
 const PokemonScreen = () => {
   const params = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:3007/pokemones`)
+  
+    .then((db) => db.json()) 
+    .then((result) => {
+      console.log(result);
+      });
+  }, [])
+  console.log(Database)
   const [compareMode, setcompareMode] = useState(false);
   const pokemonToRender = params.id;
   const newItem = Database.findIndex((pokemon) => {

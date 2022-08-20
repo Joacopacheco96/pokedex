@@ -1,16 +1,27 @@
-import { useState, React } from "react";
+import { useState, React, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import DatabaseJson from "../../Database/Database.jsx";
+
 import Card from "../Cards/Card.jsx";
 
 import "./Home.css";
 
 const Home = () => {
-  const [database, setDatabase] = useState(DatabaseJson);
+  const [database, setDatabase] = useState([]);
   const [input, setInput] = useState("");
   const [sortType, setSortType] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`http://localhost:3007/pokemones`)
+  
+    .then((db) => db.json()) 
+    .then((result) => {
+      setDatabase(result);
+      });
+  }, [])
+  
+
 
   const handleInput = (e) => {
     setInput(e.target.value);
