@@ -157,9 +157,12 @@ li {
 }
 
 .txtType {
+  max-width: 80px;
+  min-width: 40px;
   margin-left: 1vw;
   margin-right: 1vw;
   width: 20%;
+
   text-align: center;
 }
 .about {
