@@ -10,7 +10,6 @@ const Home = () => {
   const [database, setDatabase] = useState([]);
   const [input, setInput] = useState("");
   const [sortType, setSortType] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3007/pokemones`)

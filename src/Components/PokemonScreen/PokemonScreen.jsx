@@ -1,34 +1,32 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 
 import "./PokemonScreen.css";
 import "../../Stylessheets/styles.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-import { useParams, Link } from "react-router-dom";
-import Database from "../../Database/Database";
+import database from '../../Database/Database.jsx'
 
 const PokemonScreen = () => {
-  const params = useParams();
-
+  const [newDatabase, setNewDatabase] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:3007/pokemones`)
-  
+    fetch(`http://localhost:3007/pokemones/`)  
     .then((db) => db.json()) 
     .then((result) => {
-      console.log(result);
+      setNewDatabase(result);
+      console.log(newDatabase)
       });
-  }, [])
-  console.log(Database)
-  const [compareMode, setcompareMode] = useState(false);
+  },[])
+
+  const params = useParams();
   const pokemonToRender = params.id;
-  const newItem = Database.findIndex((pokemon) => {
+  
+  const pokemonIndex = database.findIndex((pokemon) => {
     return pokemonToRender == pokemon.id;
   });
-  const item = Database[newItem];
+  const item = database[pokemonIndex];
   return (
     <div className="PokemonScreen" style={{ backgroundColor: `${item.color}` }}>
-      <button onClick={() => setcompareMode(!compareMode)}>compare</button>
-
       <div className="container">
         <div className="imageContainer">
           <div className="navContainer">
@@ -44,17 +42,17 @@ const PokemonScreen = () => {
           </div>
 
           <div className="carrousel">
-            {Database[newItem - 1] ? (
+            {newDatabase[pokemonIndex - 1] ? (
               <Link
                 className="btnToChange"
-                to={`/pokemon/${Database[newItem - 1].id}`}
+                to={`/pokemon/${database[pokemonIndex - 1].id}`}
               >
                 <button className="btnToChange">{"<"}</button>
               </Link>
             ) : (
               <Link
                 className="btnToChange"
-                to={`/pokemon/${Database[Database.length - 1].id}`}
+                to={`/pokemon/${database[database.length - 1].id}`}
               >
                 <button className="btnToChange">{"<"}</button>
               </Link>
@@ -64,15 +62,15 @@ const PokemonScreen = () => {
               src={`/images/${item.name}.png`}
               alt="imgPokemon"
             />
-            {Database[newItem + 1] ? (
+            {newDatabase[pokemonIndex + 1] ? (
               <Link
                 className="btnToChange"
-                to={`/pokemon/${Database[newItem + 1].id}`}
+                to={`/pokemon/${newDatabase[pokemonIndex + 1].id}`}
               >
                 <button className="btnToChange">{">"}</button>
               </Link>
             ) : (
-              <Link className="btnToChange" to={`/pokemon/${Database[0].id}`}>
+              <Link className="btnToChange" to={`/pokemon/${database[0].id}`}>
                 <button className="btnToChange">{">"}</button>
               </Link>
             )}
