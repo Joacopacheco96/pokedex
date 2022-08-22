@@ -9,11 +9,18 @@
 }
 .PokemonScreen {
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
   padding: 5px;
   max-width: 600px;
   position: relative;
 }
-
+.btnCompare{
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100px;
+  height: 40px;}
 .navContainer {
   display: flex;
   flex-direction: row;

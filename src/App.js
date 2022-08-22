@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pokemon/:id" element={<PokemonScreen />} />
+          <Route path="/pokemon/:name" element={<PokemonScreen />} />
         </Routes>
       </BrowserRouter>
     </div>

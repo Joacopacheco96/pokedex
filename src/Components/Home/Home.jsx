@@ -12,14 +12,14 @@ const Home = () => {
   const [sortType, setSortType] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3007/pokemones`)
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=50&offset=0`)
   
     .then((db) => db.json()) 
     .then((result) => {
-      setDatabase(result);
+      setDatabase(result.results);
       });
   }, [])
-  
+    
 
 
   const handleInput = (e) => {
@@ -76,11 +76,12 @@ const Home = () => {
           if (item.name.includes(`${input}`)) {
             return (
 
-              <Link key={index} to={`/pokemon/${item.id}`}>
+              <Link key={index} to={`/pokemon/${(item.name).toUpperCase()}`}>
                 <Card item={item} index={index} />
               </Link>
 
             );
+
           }
         })}
       </div>
