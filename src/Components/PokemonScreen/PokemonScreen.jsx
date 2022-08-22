@@ -220,7 +220,6 @@ const PokemonScreen = () => {
           </div>
         </div>
 
-        {/* {compareMode && copiar div } */}
       </div>
     </div>
   );
