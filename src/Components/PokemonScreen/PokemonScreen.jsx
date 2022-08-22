@@ -9,7 +9,6 @@ import Database from "../../Database/Database";
 
 const PokemonScreen = () => {
   const params = useParams();
-  const [compareMode, setcompareMode] = useState(false);
   const pokemonToRender = params.id;
   const newItem = Database.findIndex((pokemon) => {
     return pokemonToRender == pokemon.id;
@@ -17,7 +16,6 @@ const PokemonScreen = () => {
   const item = Database[newItem];
   return (
     <div className="PokemonScreen" style={{ backgroundColor: `${item.color}` }}>
-      <button onClick={() => setcompareMode(!compareMode)}>compare</button>
 
       <div className="container">
         <div className="imageContainer">
@@ -212,7 +210,6 @@ const PokemonScreen = () => {
           </div>
         </div>
 
-        {/* {compareMode && copiar div } */}
       </div>
     </div>
   );
